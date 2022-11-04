@@ -295,12 +295,12 @@ public class ForwardingMapTest extends TestCase {
   }
 
   public void testToStringWithNullKeys() throws Exception {
-    Map<String, String> hashmap = Maps.newHashMap();
+    Map<String, String> hashmap = Maps.newLinkedHashMap();
     hashmap.put("foo", "bar");
     hashmap.put(null, "baz");
 
     StandardImplForwardingMap<String, String> forwardingMap =
-        new StandardImplForwardingMap<>(Maps.<String, String>newHashMap());
+        new StandardImplForwardingMap<>(Maps.<String, String>newLinkedHashMap());
     forwardingMap.put("foo", "bar");
     forwardingMap.put(null, "baz");
 
@@ -308,12 +308,12 @@ public class ForwardingMapTest extends TestCase {
   }
 
   public void testToStringWithNullValues() throws Exception {
-    Map<String, String> hashmap = Maps.newHashMap();
+    Map<String, String> hashmap = Maps.newLinkedHashMap();
     hashmap.put("foo", "bar");
     hashmap.put("baz", null);
 
     StandardImplForwardingMap<String, String> forwardingMap =
-        new StandardImplForwardingMap<>(Maps.<String, String>newHashMap());
+        new StandardImplForwardingMap<>(Maps.<String, String>newLinkedHashMap());
     forwardingMap.put("foo", "bar");
     forwardingMap.put("baz", null);
 
